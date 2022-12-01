@@ -1,4 +1,4 @@
-package ifsp.ads.pdm.jp.moviesmanager
+package ifsp.ads.pdm.jp.moviesmanager.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
