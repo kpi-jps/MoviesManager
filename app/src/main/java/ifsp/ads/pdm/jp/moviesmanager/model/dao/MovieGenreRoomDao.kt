@@ -11,6 +11,6 @@ interface MovieGenreRoomDao {
     fun updateMovieGenre(movieGenre: MovieGenre) : Int //return the number of lines changed
     @Delete
     fun deleteMovieGenre(movieGenre: MovieGenre) : Int //return the number of lines changed
-    @Query("SELECT * FROM moviegenre ORDER BY genrename")
+    @Query("SELECT * FROM movie_genre ORDER BY genre_name")
     fun getMovieGenres() : MutableList<MovieGenre>
 }
