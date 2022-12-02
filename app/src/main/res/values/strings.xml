@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoviesManager</string>
+    <string name="movie_label">Filme:</string>
+    <string name="rate_label">Nota:</string>
 </resources>
