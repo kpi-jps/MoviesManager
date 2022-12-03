@@ -28,7 +28,7 @@ class MovieRoomController(private val mainActivity: MainActivity) {
             override fun onPostExecute(result: MutableList<Movie>?) {
                 super.onPostExecute(result)
                 if (result != null) {
-                    //atualiza lista da main activity
+                    mainActivity.updateMovies(result)
                 }
             }
 
