@@ -17,4 +17,6 @@ interface MovieRoomDao {
     fun deleteMovie(movie : Movie) : Int //return the number of lines changed
     @Query("SELECT * FROM movie ORDER BY movie_name")
     fun getMovies() : MutableList<Movie>
+    @Query("SELECT * FROM movie ORDER BY rate DESC")
+    fun getMoviesSortedByRate() : MutableList<Movie>
 }

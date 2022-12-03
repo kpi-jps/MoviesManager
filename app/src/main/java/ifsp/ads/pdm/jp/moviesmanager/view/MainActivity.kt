@@ -92,6 +92,14 @@ class MainActivity : AppCompatActivity() {
                 carl.launch(Intent(this, MovieActivity::class.java))
                 true
             }
+            R.id.sortedByNameMi -> {
+                movieController.getMovies()
+                true
+            }
+            R.id.sortedByRateMi -> {
+                movieController.getMoviesSortedByRate()
+                true
+            }
             else -> {false}
         }
     }

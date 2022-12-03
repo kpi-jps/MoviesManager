@@ -35,6 +35,24 @@ class MovieRoomController(private val mainActivity: MainActivity) {
         }.execute()
     }
 
+    fun getMoviesSortedByRate() {
+        object : AsyncTask<Unit, Unit, MutableList<Movie>>() {
+            override fun doInBackground(vararg params: Unit?): MutableList<Movie> {
+                val movies = mutableListOf<Movie>()
+                movies.addAll(movieRoomDaoImpl.getMoviesSortedByRate())
+                return movies
+            }
+
+            override fun onPostExecute(result: MutableList<Movie>?) {
+                super.onPostExecute(result)
+                if (result != null) {
+                    mainActivity.updateMovies(result)
+                }
+            }
+
+        }.execute()
+    }
+
     fun insertMovie(movie: Movie) {
         Thread {
             movieRoomDaoImpl.insertMovie(movie)

@@ -19,5 +19,6 @@ data class Movie(
     var studio: String,
     var duration: Int,
     var watched: Int, //boolean flag (0 = false, 1 = true)
-    var rate: Int?, //from 0 up to 10
+    var rate: Double?, //from 0 up to 10
+    var genreId: Int?
 ) : Parcelable

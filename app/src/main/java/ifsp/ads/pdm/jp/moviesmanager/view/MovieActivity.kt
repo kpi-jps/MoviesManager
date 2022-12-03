@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
 import android.widget.Toast
 import ifsp.ads.pdm.jp.moviesmanager.databinding.ActivityMovieBinding
 import ifsp.ads.pdm.jp.moviesmanager.model.Constants.EXTRA_MOVIE
@@ -22,7 +23,6 @@ class MovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(mab.root)
         val receivedMovie = intent.getParcelableExtra<Movie>(EXTRA_MOVIE)
-        //val createOp = intent.getBooleanExtra(EXTRA_CREATE_OP, false)
         val updateOp = intent.getBooleanExtra(EXTRA_UPDATE_OP, false)
         val viewOp = intent.getBooleanExtra(EXTRA_VIEW_OP, false)
         receivedMovie?.let { _receivedMovie ->
@@ -36,6 +36,10 @@ class MovieActivity : AppCompatActivity() {
                     else rateEt.setText(rate.toString())
                     if(watched == 0) watchedCb.isChecked = false
                     else watchedCb.isChecked = true
+                    if(genreId != null) {
+                        genreSp.setSelection(genreId!!)
+                    }
+
                 }
                 if(updateOp) {
                     movieNameEt.isEnabled = false
@@ -48,27 +52,29 @@ class MovieActivity : AppCompatActivity() {
                     rateEt.isEnabled = false
                     watchedCb.isEnabled = false
                     saveMovieBt.visibility = View.GONE
+                    genreSp.isEnabled = false
                 }
 
             }
         }
 
         mab.saveMovieBt.setOnClickListener{
-            if(Integer.parseInt(mab.rateEt.text.toString()) > 10 ||
-                Integer.parseInt(mab.rateEt.text.toString()) < 0) {
+            if(mab.rateEt.text.toString().toDouble() > 10 ||
+                mab.rateEt.text.toString().toDouble() < 0) {
                 Toast.makeText(this, MSG_RATE_OUT_OF_RANGE, Toast.LENGTH_LONG).show()
-            } else if(Integer.parseInt(mab.durationEt.text.toString()) <= 0) {
+            } else if(mab.durationEt.text.toString().toInt() <= 0) {
                 Toast.makeText(this, MSG_DURATION_VALUE, Toast.LENGTH_LONG).show()
-            } else if(Integer.parseInt(mab.releaseYearEt.text.toString()) <= 0) {
+            } else if(mab.releaseYearEt.text.toString().toInt() <= 0) {
                 Toast.makeText(this, MSG_YEAR_RELEASE_VALUE, Toast.LENGTH_LONG).show()
             }else {
                 val movie = Movie(
                     movieName = mab.movieNameEt.text.toString(),
-                    releaseYear = Integer.parseInt(mab.releaseYearEt.text.toString()),
+                    releaseYear = mab.releaseYearEt.text.toString().toInt(),
                     studio = mab.movieStudioEt.text.toString(),
-                    duration = Integer.parseInt(mab.durationEt.text.toString()),
-                    rate = Integer.parseInt(mab.rateEt.text.toString()),
-                    watched = if(mab.watchedCb.isChecked == true) 1 else 0
+                    duration = mab.durationEt.text.toString().toInt(),
+                    rate =  (mab.rateEt.text.toString().toDouble()),
+                    watched = if(mab.watchedCb.isChecked == true) 1 else 0,
+                    genreId = mab.genreSp.selectedItemPosition
                 )
                 val resultIntent = Intent()
                 resultIntent.putExtra(EXTRA_MOVIE, movie)
@@ -78,4 +84,5 @@ class MovieActivity : AppCompatActivity() {
             }
         }
     }
+
 }

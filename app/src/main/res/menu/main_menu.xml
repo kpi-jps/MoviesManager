@@ -12,6 +12,16 @@
                android:title="@string/menu_add_movie_label"
                app:showAsAction="withText"
                />
+            <item
+                android:id="@+id/sortedByNameMi"
+                android:title="@string/sorted_by_name"
+                app:showAsAction="withText"
+                />
+            <item
+                android:id="@+id/sortedByRateMi"
+                android:title="@string/sorted_by_rate"
+                app:showAsAction="withText"
+                />
         </menu>
     </item>
 </menu>

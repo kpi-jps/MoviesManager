@@ -12,11 +12,13 @@
     <string name="genre_label">Gênero:</string>
     <string name="save_button_label">Salvar</string>
     <string name="rate_label">Nota:</string>
-    <string name="rate_hint">0</string>
+    <string name="rate_hint">0.0</string>
 
     <string name="remove_item">Remover Item</string>
     <string name="edit_item">Editar Item</string>
     <string name="add_movie">Adicionar filme</string>
+    <string name="sorted_by_name">Ordenar por nome</string>
+    <string name="sorted_by_rate">Ordenar por nota</string>
 
     
 
