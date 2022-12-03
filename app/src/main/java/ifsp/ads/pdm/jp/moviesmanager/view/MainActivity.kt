@@ -18,6 +18,7 @@ import ifsp.ads.pdm.jp.moviesmanager.controller.MovieRoomController
 import ifsp.ads.pdm.jp.moviesmanager.databinding.ActivityMainBinding
 import ifsp.ads.pdm.jp.moviesmanager.model.Constants.EXTRA_MOVIE
 import ifsp.ads.pdm.jp.moviesmanager.model.Constants.EXTRA_UPDATE_OP
+import ifsp.ads.pdm.jp.moviesmanager.model.Constants.EXTRA_VIEW_OP
 import ifsp.ads.pdm.jp.moviesmanager.model.Constants.MSG_MOVIE_ALREADY_REGISTERED
 import ifsp.ads.pdm.jp.moviesmanager.model.entities.Movie
 
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                         if(_movie.movieName != null) {
                             val pos = movies.indexOfFirst { it.movieName == _movie.movieName }
                             if (pos != -1) {
-                                var updateOp = result.data?.getBooleanExtra(EXTRA_UPDATE_OP,true)
+                                val updateOp = result.data?.getBooleanExtra(EXTRA_UPDATE_OP,false)
                                 if(updateOp!!) {
                                     movieController.updateMovie(_movie)
                                 } else {
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             val movie = movies[pos]
             val movieIntent = Intent(this@MainActivity, MovieActivity::class.java)
             movieIntent.putExtra(EXTRA_MOVIE, movie)
-            movieIntent.putExtra(EXTRA_UPDATE_OP, false)
+            movieIntent.putExtra(EXTRA_VIEW_OP, true)
             startActivity(movieIntent)
         }
         movieController.getMovies()
@@ -115,6 +116,7 @@ class MainActivity : AppCompatActivity() {
                 val movieIntent = Intent(this, MovieActivity::class.java)
                 movieIntent.putExtra(EXTRA_MOVIE, movie)
                 movieIntent.putExtra(EXTRA_UPDATE_OP, true)
+                carl.launch(movieIntent)
                 true
             }
             else -> {false}

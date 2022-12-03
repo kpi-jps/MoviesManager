@@ -10,7 +10,7 @@ import ifsp.ads.pdm.jp.moviesmanager.model.entities.Movie
 @Dao
 interface MovieRoomDao {
     @Insert
-    fun insertMovie(movie : Movie) : Long //return the id of entity inserted
+    fun insertMovie(movie : Movie)
     @Update
     fun updateMovie(movie: Movie) : Int //return the number of lines changed
     @Delete

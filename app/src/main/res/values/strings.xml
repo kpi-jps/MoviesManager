@@ -3,7 +3,7 @@
     <string name="movie_label">Filme:</string>
     <string name="movie_hint">Nome do filme</string>
     <string name="studio_label">Estúdio / Produtora:</string>
-    <string name="studio_hint">Estúdio ou produtora:</string>
+    <string name="studio_hint">Estúdio ou produtora</string>
     <string name="release_year_label">Ano de lançamento:</string>
     <string name="release_year_hint">0000</string>
     <string name="watched_label">Assistido</string>
