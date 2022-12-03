@@ -1,5 +1,29 @@
 <resources>
     <string name="app_name">MoviesManager</string>
     <string name="movie_label">Filme:</string>
+    <string name="movie_hint">Nome do filme</string>
+    <string name="studio_label">Estúdio / Produtora:</string>
+    <string name="studio_hint">Estúdio ou produtora:</string>
+    <string name="release_year_label">Ano de lançamento:</string>
+    <string name="release_year_hint">0000</string>
+    <string name="watched_label">Assistido</string>
+    <string name="duration_label">Duração (minutos):</string>
+    <string name="duration_hint">0</string>
+    <string name="genre_label">Gênero:</string>
+    <string name="save_button_label">Salvar</string>
     <string name="rate_label">Nota:</string>
+    <string name="rate_hint">0</string>
+    <string name="genre_hint">Adicione um gênero</string>
+    <string name="remove_item">Remover Item</string>
+    <string name="edit_item">Editar Item</string>
+    <string name="add_movie">Adicionar filme</string>
+    <string name="manage_genre">Gerenciar generos</string>
+    
+
+    //menu
+    <string name="menu_label">Menu</string>
+    <string name="menu_add_movie_label">Adicionar filme</string>
+    <string name="menu_add_genre">Adicionar gênero</string>
+    <string name="menu_manage_genre">Gerenciar gêneros</string>
+
 </resources>

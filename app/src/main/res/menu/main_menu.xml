@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuMi"
+        android:icon="@drawable/ic_menu_foreground"
+        android:title="@string/menu_label"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+               android:id="@+id/addMovieMi"
+               android:title="@string/menu_add_movie_label"
+               app:showAsAction="withText"
+               />
+            <item
+                android:id="@+id/addGenreMi"
+                android:title="@string/menu_add_genre"
+                app:showAsAction="withText"
+               />
+            <item
+                android:id="@+id/manageGenreMi"
+                android:title="@string/menu_manage_genre"
+                app:showAsAction="withText"
+                />
+        </menu>
+    </item>
+</menu>
