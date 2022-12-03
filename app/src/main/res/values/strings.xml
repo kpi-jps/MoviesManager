@@ -13,17 +13,27 @@
     <string name="save_button_label">Salvar</string>
     <string name="rate_label">Nota:</string>
     <string name="rate_hint">0</string>
-    <string name="genre_hint">Adicione um gênero</string>
+
     <string name="remove_item">Remover Item</string>
     <string name="edit_item">Editar Item</string>
     <string name="add_movie">Adicionar filme</string>
-    <string name="manage_genre">Gerenciar generos</string>
+
     
 
     //menu
     <string name="menu_label">Menu</string>
     <string name="menu_add_movie_label">Adicionar filme</string>
     <string name="menu_add_genre">Adicionar gênero</string>
-    <string name="menu_manage_genre">Gerenciar gêneros</string>
+
+    <string-array name="movie_genres">
+        <item>Ação</item>
+        <item>Aventura</item>
+        <item>Comédia</item>
+        <item>Drama</item>
+        <item>Ficção Científica</item>
+        <item>Romance</item>
+        <item>Suspense</item>
+        <item>Terror</item>
+    </string-array>
 
 </resources>

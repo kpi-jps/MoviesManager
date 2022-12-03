@@ -24,6 +24,4 @@ data class Movie(
     @NonNull
     var watched: Int, //boolean flag (0 = false, 1 = true)
     var rate : Int?, //from 0 up to 10
-    @NonNull
-    var genreId: Long
 ) : Parcelable

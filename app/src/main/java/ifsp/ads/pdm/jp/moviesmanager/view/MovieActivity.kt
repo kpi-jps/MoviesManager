@@ -13,12 +13,19 @@ class MovieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(mab.root)
-
         val receivedMovie = intent.getParcelableExtra<Movie>(EXTRA_MOVIE)
         receivedMovie?.let { _receivedMovie ->
             with(mab) {
                 with(_receivedMovie) {
-                    movieName
+                    movieNameEt.setText(movieName)
+                    !movieNameEt.isEnabled
+                    releaseYearEt.setText(releaseYear.toString())
+                    movieStudioEt.setText(studio)
+                    durationEt.setText(duration.toString())
+                    if(rate == 0) rateEt.setText("0")
+                    else rateEt.setText(rate.toString())
+                    if(watched == 0) !watchedCb.isChecked
+                    else watchedCb.isChecked
                 }
             }
 

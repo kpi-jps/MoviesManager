@@ -66,8 +66,6 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
-                } else {
-
                 }
             }
         registerForContextMenu(amb.moviesLv)
@@ -91,14 +89,6 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.addMovieMi -> {
                 carl.launch(Intent(this, MovieActivity::class.java))
-                true
-            }
-            R.id.addGenreMi -> {
-                carl.launch(Intent(this, MovieGenreActivity::class.java))
-                true
-            }
-            R.id.manageGenreMi -> {
-                carl.launch(Intent(this, MovieGenreManageActivity::class.java))
                 true
             }
             else -> {false}
